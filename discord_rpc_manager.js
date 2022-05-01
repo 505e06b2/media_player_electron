@@ -11,6 +11,7 @@ function DiscordRPCManager() {
 		if(client) client.destroy();
 		client = new RPC.Client({ transport: "ipc" });
 		client.on("ready", () => this.setMetadata());
+		client.on("disconnected", () => _createClient());
 		try {
 			await client.login({ clientId: application_id });
 		} catch(e) {
