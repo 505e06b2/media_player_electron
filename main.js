@@ -38,9 +38,9 @@ app.whenReady().then(() => {
 	const window = new BrowserWindow({
 		width: 800,
 		height: 600,
-		title: "𝚖𝚎𝚍𝚒𝚊_𝚙𝚕𝚊𝚢𝚎𝚛"
+		title: "𝚖𝚎𝚍𝚒𝚊_𝚙𝚕𝚊𝚢𝚎𝚛",
+		autoHideMenuBar: true
 	});
-	window.setMenu(null);
 	window.loadURL(url.toString());
 	window.setIcon("icon.png");
 
