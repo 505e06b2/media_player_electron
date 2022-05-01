@@ -1,0 +1,16 @@
+{
+	"name": "electron_media_player",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron ."
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"discord-rpc": "^4.0.1",
+		"electron": "^18.2.0",
+		"electron-fetch": "^1.7.4"
+	}
+}
