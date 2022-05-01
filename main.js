@@ -25,7 +25,7 @@ app.whenReady().then(() => {
 	const url = new URL(settings.site);
 	url.search = previous_query;
 	for(const [key, value] of Object.entries(settings.parameters)) {
-		if(key === "playlists") {
+		if(key === "playlists" && value.length) {
 			url.searchParams.delete("playlist");
 			for(const x of value) {
 				url.searchParams.append("playlist", x);
@@ -38,9 +38,11 @@ app.whenReady().then(() => {
 	const window = new BrowserWindow({
 		width: 800,
 		height: 600,
+		title: "𝚖𝚎𝚍𝚒𝚊_𝚙𝚕𝚊𝚢𝚎𝚛"
 	});
 	window.setMenu(null);
 	window.loadURL(url.toString());
+	window.setIcon("icon.png");
 
 	const tray = new Tray("icon.png");
 	const contextMenu = Menu.buildFromTemplate([
@@ -58,6 +60,7 @@ app.whenReady().then(() => {
 		try {
 			const buffer = await (await fetch(favicons[0])).buffer();
 			const image = nativeImage.createFromBuffer(buffer);
+			window.setIcon(image);
 			tray.setImage(image);
 		} catch(e) {
 			console.trace(e);
