@@ -3,6 +3,12 @@
 const { app, BrowserWindow, Tray, nativeImage, Menu } = require("electron");
 const fs = require("fs");
 const fetch = require("electron-fetch").default;
+const contextMenu = require("electron-context-menu");
+
+contextMenu({
+	showSearchWithGoogle: false,
+	showInspectElement: true
+});
 
 const settings = require("./settings");
 
