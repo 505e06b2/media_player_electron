@@ -24,7 +24,7 @@ function DiscordRPCManager() {
 		if(metadata) {
 			try {
 				await client.setActivity({
-					details: `├ ${metadata.playlist_monospace}`.slice(0, 128),
+					details: `├ ${metadata.playlist_path_monospace}`.slice(0, 128),
 					state: `└─ ${metadata.track_monospace}`.slice(0, 128),
 					largeImageKey: metadata.icon_url,
 				});
